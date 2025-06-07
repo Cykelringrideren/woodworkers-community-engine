@@ -1,0 +1,21 @@
+# Core dependencies
+praw>=7.7.1
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+feedparser>=6.0.10
+pyyaml>=6.0.1
+
+# Email and notifications
+slack-sdk>=3.21.3
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Optional LLM support
+# ollama  # Uncomment if using local LLM features
+
+# Development tools
+black>=23.7.0
+flake8>=6.0.0
+

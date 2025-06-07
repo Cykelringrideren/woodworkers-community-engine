@@ -1,0 +1,91 @@
+# WoodworkersArchive Community Engagement Engine Configuration
+
+# Reddit Configuration
+reddit:
+  client_id: "YOUR_REDDIT_CLIENT_ID"
+  client_secret: "YOUR_REDDIT_CLIENT_SECRET"
+  user_agent: "WoodworkersArchive Community Watcher v1.0"
+  subreddits:
+    - "woodworking"
+    - "BeginnerWoodWorking"
+    - "woodworkingplans"
+    - "handtools"
+    - "turning"
+
+# Forum Configuration
+forums:
+  lumberjocks:
+    url: "https://www.lumberjocks.com"
+    rss_feed: "https://www.lumberjocks.com/topics/rss"
+  sawmillcreek:
+    url: "https://www.sawmillcreek.org"
+    rss_feed: "https://www.sawmillcreek.org/external.php?type=RSS2"
+
+# Facebook Configuration
+facebook:
+  access_token: "YOUR_FACEBOOK_ACCESS_TOKEN"
+  groups:
+    - "woodworking.enthusiasts"
+    - "handmade.furniture"
+    # Add Facebook group IDs here
+
+# Keywords for scoring (stored in SQLite, this is just for reference)
+keywords:
+  high_value:
+    - "table saw"
+    - "router"
+    - "jointer"
+    - "planer"
+    - "bandsaw"
+    - "drill press"
+    - "dust collection"
+    - "workshop setup"
+  medium_value:
+    - "wood finish"
+    - "sanding"
+    - "glue up"
+    - "mortise"
+    - "tenon"
+    - "dovetail"
+
+# Notification Configuration
+notifications:
+  slack:
+    webhook_url: "YOUR_SLACK_WEBHOOK_URL"
+    channel: "#community-engagement"
+  email:
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    username: "your-email@gmail.com"
+    password: "YOUR_APP_PASSWORD"
+    to_address: "team@woodworkersarchive.com"
+
+# UTM Tracking Configuration
+utm:
+  base_url: "https://woodworkersarchive.com"
+  default_campaign: "community_engagement"
+  source_mapping:
+    reddit: "reddit"
+    lumberjocks: "lumberjocks"
+    sawmillcreek: "sawmillcreek"
+    facebook: "facebook"
+
+# Scoring Configuration
+scoring:
+  keyword_match: 5
+  recent_post_bonus: 2  # Posts under 60 minutes
+  external_link_penalty: -1
+  max_posts_per_run: 20
+
+# Performance Configuration
+performance:
+  max_execution_time: 120  # seconds
+  posts_per_platform: 50
+  content_preview_length: 250
+
+# Optional LLM Configuration
+llm:
+  enabled: false
+  model: "llama3:8b"
+  ollama_host: "http://localhost:11434"
+
